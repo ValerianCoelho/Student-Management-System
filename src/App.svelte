@@ -1,11 +1,11 @@
 <script>
-  import Home from "./lib/Pages/Home.svelte";
+  import Marks from "./lib/Pages/Marks.svelte";
 
   
 </script>
 
 <main>
-  <Home/>
+  <Marks/>
 </main>
 
 <style>
