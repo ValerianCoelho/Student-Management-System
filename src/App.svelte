@@ -1,11 +1,11 @@
 <script>
-  import Assignments from "./lib/Pages/Assignments.svelte";
+  import Timetable from "./lib/Pages/Timetable.svelte";
 
   
 </script>
 
 <main>
-  <Assignments/>
+  <Timetable/>
 </main>
 
 <style>
