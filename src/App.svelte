@@ -1,11 +1,11 @@
 <script>
-  import Marks from "./lib/Pages/Marks.svelte";
+  import Attendance from "./lib/Pages/Attendance.svelte";
 
   
 </script>
 
 <main>
-  <Marks/>
+  <Attendance/>
 </main>
 
 <style>
