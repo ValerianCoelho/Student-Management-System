@@ -55,22 +55,22 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #333;
-    color: white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid rgba(0, 0, 0, .2);
   }
 
   .side-panel button {
     padding: 10px;
-    background-color: #555;
     border: none;
-    color: white;
-    text-align: left;
+    text-align: center;
+    background-color: white;
   }
 
   .side-panel button:hover {
-    background-color: #777;
+    font-weight: 600;
   }
 
   main {
