@@ -4,8 +4,8 @@
   export let remainingColor;
 </script>
 
-<div class="donut-chart" style:background="conic-gradient({completedColor} {completed}%, {remainingColor} {completed}%)" style:border-radius="50%">
-  <div class="outer">
+<div class="donut-chart">
+  <div class="outer" style:background="conic-gradient({completedColor} {completed}%, {remainingColor} {completed}%)" style:border-radius="50%">
     <div class="inner"></div>
   </div>
 </div>

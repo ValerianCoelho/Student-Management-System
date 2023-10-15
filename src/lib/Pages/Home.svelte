@@ -9,9 +9,27 @@
 <div>
     <div class="title">Welcome, {name}</div>
     <div class="performance-cards">
-        <PerformanceCard/>
-        <PerformanceCard/>
-        <PerformanceCard/>
+        <PerformanceCard
+            title="Marks"
+            subTitle="Internal Test 1"
+            completed={50}
+            completedColor="var(--donut-completed-color-1)"
+            remainingColor="var(--donut-remaining-color-1)"
+        />
+        <PerformanceCard
+            title="Attendance"
+            subTitle="Semester 5"
+            completed={90}
+            completedColor="var(--donut-completed-color-2)"
+            remainingColor="var(--donut-remaining-color-2)"
+        />
+        <PerformanceCard
+            title="Marks"
+            subTitle="Submitted"
+            completed={80}
+            completedColor="var(--donut-completed-color-3)"
+            remainingColor="var(--donut-remaining-color-3)"
+        />
     </div>
     <div class="timetable">
         <div class="timetable-title">Timetable</div>
@@ -37,5 +55,5 @@
 </div>
 
 <style>
-
+    @import '../../styles.css';
 </style>

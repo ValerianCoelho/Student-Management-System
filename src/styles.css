@@ -1,3 +1,15 @@
+:root {
+    --donut-completed-color-1: #0075FF;
+    --donut-remaining-color-1: rgba(0, 70, 207, 0.15);
+    
+    --donut-completed-color-2: #9C2EF2;
+    --donut-remaining-color-2: rgba(156, 46, 242, 0.20);
+
+    --donut-completed-color-3: #29D2FF;
+    --donut-remaining-color-3: rgba(41, 210, 255, 0.20);
+
+  }
+
 .header-text {
     font-size: 30px;
 }
@@ -26,6 +38,10 @@
     background: #0075FF;
 }
 
+.gray-color {
+    color: #7F7F7F;
+}
+
 .light-color-1 {
     background-color: rgba(0, 70, 207, 0.10);
 }
@@ -38,10 +54,15 @@
     background-color: #0075FF;
 }
 
-.donut-color-1 {
+.donut-color-2 {
     background-color: #9C2EF2;
+
 }
 
-.donut-color-1 {
+.donut-color-3 {
     background-color: #29D2FF;
+}
+
+.border-color {
+    border: 1px solid rgba(0, 0, 0, .2);
 }

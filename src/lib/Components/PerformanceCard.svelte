@@ -1,22 +1,31 @@
 <script>
   import DonutChart from "./DonutChart.svelte";
+  export let completed;
+  export let completedColor;
+  export let remainingColor;
+  export let title;
+  export let subTitle;
 </script>
 
-<div class="performance-card">
-  <h2 class="title">Marks</h2>
-  <h5 class="sub-title">Internal Test 1</h5>
-  <DonutChart completed=50 completedColor='#0075FF' remainingColor='#d9e3f8'/>
+<div class="performance-card border-color">
+  <h2 class="title">{title}</h2>
+  <h5 class="sub-title gray-color">{subTitle}</h5>
+  <DonutChart {completed} {completedColor} {remainingColor}/>
 </div>
 
 <style>
+  @import '../../styles.css';
   .performance-card {
-    border: 1px solid rgba(0, 0, 0, .2);
     display: inline-block;
     padding: 20px;
     border-radius: 10px;
   }
   .sub-title {
-    color: gray;
     margin-bottom: 20px;
+  }
+  :global(*) {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
   }
 </style>
