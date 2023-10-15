@@ -50,7 +50,7 @@
 
 <style>
   .side-panel {
-    width: 200px;
+    width: 250px;
     height: 100%;
     position: fixed;
     top: 0;
@@ -74,6 +74,6 @@
   }
 
   main {
-    margin-left: 200px; /* Adjust for the side panel width */
+    margin-left: 250px; /* Adjust for the side panel width */
   }
 </style>

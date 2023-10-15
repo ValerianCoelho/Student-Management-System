@@ -6,8 +6,8 @@
     let name = 'Anthony'
 </script>
 
-<div>
-    <div class="title">Welcome, {name}</div>
+<div class="home">
+    <div class="title header-text bolder">Welcome, {name}</div>
     <div class="performance-cards">
         <PerformanceCard
             title="Marks"
@@ -31,8 +31,8 @@
             remainingColor="var(--donut-remaining-color-3)"
         />
     </div>
-    <div class="timetable">
-        <div class="timetable-title">Timetable</div>
+    <div class="timetable-section">
+        <div class="timetable-title header-text bold">Timetable</div>
         <div class="lectures">
             <Lecture fromTime='9:00' toTime='10:00' subjectName='Operating Systems' className='LHM2'/>
             <Lecture fromTime='9:00' toTime='10:00' subjectName='Operating Systems' className='LHM2'/>
@@ -43,9 +43,9 @@
             <Lecture fromTime='9:00' toTime='10:00' subjectName='Operating Systems' className='LHM2'/>
         </div>
     </div>
-    <div class="notices">
-        <div class="notice-title">Notices</div>
-        <div class="Notices">
+    <div class="notices-section">
+        <div class="notice-title header-text bold">Notices</div>
+        <div class="notices">
             <Notice date='15th August 2023' text='Celebration of Independence Day'/>
             <Notice date='15th August 2023' text='Celebration of Independence Day'/>
             <Notice date='15th August 2023' text='Celebration of Independence Day'/>
@@ -56,4 +56,20 @@
 
 <style>
     @import '../../styles.css';
+
+    .home {
+        padding: 30px;
+    }
+    .performance-cards {
+        margin: 40px 0;
+        display: flex;
+        gap: 30px;
+    }
+    .timetable-title, .notice-title {
+        margin: 20px 0;
+    }
+    .lectures, .notices {
+        display: flex;
+        gap: 20px;
+    }
 </style>

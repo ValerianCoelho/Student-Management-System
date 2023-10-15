@@ -22,6 +22,7 @@
   }
   .sub-title {
     margin-bottom: 20px;
+    font-size: 12px;
   }
   :global(*) {
     margin: 0;
