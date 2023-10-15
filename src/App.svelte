@@ -1,18 +1,79 @@
 <script>
+  import { onMount } from 'svelte';
+
+  // Import your components
+  import Home from "./lib/Pages/Home.svelte";
+  import Marks from "./lib/Pages/Marks.svelte";
+  import Attendance from "./lib/Pages/Attendance.svelte";
+  import Assignments from "./lib/Pages/Assignments.svelte";
   import Timetable from "./lib/Pages/Timetable.svelte";
 
-  
+  let currentTab = 'Home'; // Default tab
+
+  // Function to change the active tab
+  function changeTab(tabName) {
+    currentTab = tabName;
+  }
+
+  onMount(() => {
+    // Initialize with the default tab
+    changeTab(currentTab);
+  });
 </script>
 
+<div class="side-panel">
+  <!-- Create tab buttons -->
+  <button on:click={() => changeTab('Home')}>Home</button>
+  <button on:click={() => changeTab('Marks')}>Marks</button>
+  <button on:click={() => changeTab('Attendance')}>Attendance</button>
+  <button on:click={() => changeTab('Assignments')}>Assignments</button>
+  <button on:click={() => changeTab('Timetable')}>Timetable</button>
+</div>
+
 <main>
-  <Timetable/>
+  {#if currentTab === 'Home'}
+    <Home />
+  {/if}
+  {#if currentTab === 'Marks'}
+    <Marks />
+  {/if}
+  {#if currentTab === 'Attendance'}
+    <Attendance />
+  {/if}
+  {#if currentTab === 'Assignments'}
+    <Assignments />
+  {/if}
+  {#if currentTab === 'Timetable'}
+    <Timetable />
+  {/if}
 </main>
 
 <style>
-  :global(*) {  
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
+  .side-panel {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-panel button {
+    padding: 10px;
+    background-color: #555;
+    border: none;
+    color: white;
+    text-align: left;
+  }
+
+  .side-panel button:hover {
+    background-color: #777;
+  }
+
+  main {
+    margin-left: 200px; /* Adjust for the side panel width */
   }
 </style>
