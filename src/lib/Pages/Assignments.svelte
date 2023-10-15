@@ -8,6 +8,7 @@
     <HorizontalPerformanceCard 
         message1='24 Lectures Attended' 
         message2='6 Lectures Missed'
+        completed=40
         completedColor='#29D2FF'
         remainingColor='rgba(41, 210, 255, 0.20)'
     />

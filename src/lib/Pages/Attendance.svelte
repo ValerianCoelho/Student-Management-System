@@ -5,9 +5,10 @@
 
 <div>
     <div class="title">Attendance</div>
-    <HorizontalPerformanceCard 
+    <HorizontalPerformanceCard
         message1='24 Lectures Attended' 
         message2='6 Lectures Missed'
+        completed=90
         completedColor='#9C2EF2'
         remainingColor='rgba(156, 46, 242, 0.20)'
     />
