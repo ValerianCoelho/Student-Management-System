@@ -1,19 +1,18 @@
 <script>
+  export let size;
   export let completed;
   export let completedColor;
   export let remainingColor;
 </script>
 
 <div class="donut-chart">
-  <div class="outer" style:background="conic-gradient({completedColor} {completed}%, {remainingColor} {completed}%)" style:border-radius="50%">
+  <div class="outer"  style:width="{size}px" style:height="{size}px" style:background="conic-gradient({completedColor} {completed}%, {remainingColor} {completed}%)" style:border-radius="50%">
     <div class="inner"></div>
   </div>
 </div>
 
 <style>
   .outer {
-    width: 100px;
-    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;

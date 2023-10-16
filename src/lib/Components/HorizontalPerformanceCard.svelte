@@ -10,7 +10,7 @@
   
   <div class="horizontal-performance-card">
       <div class="donut-chart">
-        <DonutChart {completed} {completedColor} {remainingColor}/>
+        <DonutChart size={150} {completed} {completedColor} {remainingColor}/>
       </div>
       <div class="performance-data">
         <h5 class="msg-1" style:color={completedColor}>{message1}</h5>

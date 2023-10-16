@@ -10,7 +10,7 @@
 <div class="performance-card border-color">
   <h2 class="title">{title}</h2>
   <h5 class="sub-title gray-color">{subTitle}</h5>
-  <DonutChart {completed} {completedColor} {remainingColor}/>
+  <DonutChart size={120} {completed} {completedColor} {remainingColor}/>
 </div>
 
 <style>

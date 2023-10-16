@@ -23,7 +23,7 @@
         border-radius: 10px;
         overflow: hidden;
         width: 100%;
-        text-align: center;
+        text-align: left;
         font-size: 13px;
         padding-left: 30px;
         line-height: 25px;
@@ -34,11 +34,13 @@
         color: gray;
         background-color: rgba(0, 70, 207, 0.10);
         padding: 8px;
+        padding-left: 20px;
     }
 
     .data {
         border-top: 1px solid #ccc;
         padding: 8px;
         font-weight: 700;
+        padding-left: 20px;
     }
 </style>
