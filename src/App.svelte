@@ -60,6 +60,7 @@
     justify-content: center;
     gap: 10px;
     border: 1px solid rgba(0, 0, 0, .2);
+    background-color: white;
   }
 
   .side-panel button {
