@@ -2,8 +2,8 @@
     import Table from "../Components/Table.svelte"
 </script>
 
-<div>
-    <div>Marks Database</div>
+<div class="marks">
+    <div class="title header-text bolder">Marks Database</div>
     <Table tableData={[
     ['Subject', 'IT1', 'IT2', 'IT3', 'Final', 'Grade'],
     ['DBMQ', 20, 22, 23, 24, 'A'],
@@ -17,5 +17,12 @@
 </div>
 
 <style>
-
+    @import '../../styles.css';
+    .title {
+        margin-bottom: 30px;
+    }
+    .marks {
+        padding: 30px;
+        width: 50%;
+    }
 </style>

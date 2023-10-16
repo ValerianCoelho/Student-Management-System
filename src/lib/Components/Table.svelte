@@ -22,10 +22,16 @@
         outline: 1px solid #ccc;
         border-radius: 10px;
         overflow: hidden;
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+        padding-left: 30px;
+        line-height: 25px;
     }
     
     .header {
-        font-weight: bold;
+        font-weight: 900;
+        color: gray;
         background-color: rgba(0, 70, 207, 0.10);
         padding: 8px;
     }
@@ -33,5 +39,6 @@
     .data {
         border-top: 1px solid #ccc;
         padding: 8px;
+        font-weight: 700;
     }
 </style>
