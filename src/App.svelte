@@ -23,11 +23,11 @@
 
 <div class="side-panel">
   <!-- Create tab buttons -->
-  <button on:click={() => changeTab('Home')}>Home</button>
-  <button on:click={() => changeTab('Marks')}>Marks</button>
-  <button on:click={() => changeTab('Attendance')}>Attendance</button>
-  <button on:click={() => changeTab('Assignments')}>Assignments</button>
-  <button on:click={() => changeTab('Timetable')}>Timetable</button>
+  <button on:click={() => changeTab('Home')} class="{currentTab == 'Home'? 'selected' : ''}">Home</button>
+  <button on:click={() => changeTab('Marks')} class="{currentTab == 'Marks'? 'selected' : ''}">Marks</button>
+  <button on:click={() => changeTab('Attendance')} class="{currentTab == 'Attendance'? 'selected' : ''}">Attendance</button>
+  <button on:click={() => changeTab('Assignments')} class="{currentTab == 'Assignments'? 'selected' : ''}">Assignments</button>
+  <button on:click={() => changeTab('Timetable')} class="{currentTab == 'Timetable'? 'selected' : ''}">Timetable</button>
 </div>
 
 <main>
@@ -71,6 +71,10 @@
   }
 
   .side-panel button:hover {
+    font-weight: 600;
+  }
+
+  .selected {
     font-weight: 600;
   }
 
