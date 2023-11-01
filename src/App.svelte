@@ -1,4 +1,19 @@
 <script>
+  import SignIn from "./lib/Pages/SignIn.svelte";
+</script>
+
+<div>
+  <SignIn/>
+</div>
+
+<style>
+  :global(*) {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<!-- <script>
   import { onMount } from 'svelte';
 
   // Import your components
@@ -22,7 +37,6 @@
 </script>
 
 <div class="side-panel">
-  <!-- Create tab buttons -->
   <button on:click={() => changeTab('Home')} class="{currentTab == 'Home'? 'selected' : ''}">Home</button>
   <button on:click={() => changeTab('Marks')} class="{currentTab == 'Marks'? 'selected' : ''}">Marks</button>
   <button on:click={() => changeTab('Attendance')} class="{currentTab == 'Attendance'? 'selected' : ''}">Attendance</button>
@@ -79,6 +93,6 @@
   }
 
   main {
-    margin-left: 250px; /* Adjust for the side panel width */
+    margin-left: 250px;
   }
-</style>
+</style> -->
