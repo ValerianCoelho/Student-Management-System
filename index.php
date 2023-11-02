@@ -1,28 +1,28 @@
-<!-- This can be put in any folder but has to be run using localhost -->
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "21co68";
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="sql-data">Sql data</div>
-    <div class="button">Click Here</div>
-    <script>
-        const button = document.querySelector('.button');
-        button.addEventListener('click', ()=> {
-            const query = "select * from student where id=2;"
-            fetch(`http://localhost/practice/student.php?query=${query}`)
-                .then(response => response.json())
-                .then(data => {
-                    const sqlData = document.querySelector('.sql-data');
-                    sqlData.innerHTML = JSON.stringify(data);
-                    console.log(data)
-                })
-                .catch(error => console.log(error))
-        })
-    </script>
-</body>
-</html>
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    if($conn->connect_error) {
+        echo $conn->connect_error;
+    }
+
+    $query = $_GET['query'];
+    $result = $conn->query($query);
+
+    $data = [];
+
+    while($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    // Allow requests from any origin (replace "*" with specific origins as needed)
+    header("Access-Control-Allow-Origin: *");
+    
+    echo json_encode($data);
+
+    $conn->close();
+?>

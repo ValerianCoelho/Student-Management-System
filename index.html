@@ -14,7 +14,7 @@
         const button = document.querySelector('.button');
         button.addEventListener('click', ()=> {
             const query = "select * from student where id=2;"
-            fetch(`http://localhost/practice/student.php?query=${query}`)
+            fetch(`http://localhost/index.php?query=${query}`)
                 .then(response => response.json())
                 .then(data => {
                     const sqlData = document.querySelector('.sql-data');
