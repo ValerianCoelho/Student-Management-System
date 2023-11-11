@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+</head>
+<body>
+    <h2>Attendance Update</h2>
+    <form action="attUpdate.php" method="post">
+        <label>Enter student id</label><br>
+        <input type="text" name="student_id"><br><br>
+
+        <label>Enter date</label><br>
+        <input type="date" name="date"><br><br>
+
+        <label>Enter attendance status</label><br>
+        <input type="number" name="present" max="1"><br><br>
+
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>
+</html>
