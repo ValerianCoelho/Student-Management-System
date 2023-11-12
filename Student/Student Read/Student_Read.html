@@ -53,6 +53,68 @@
         .input-data {
             margin-top: 100px;
         }
+        .extra {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .overlay-card {
+            position: fixed;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 20px;
+        }
+        .title {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #7569E2;
+            font-size: 20px;
+        }
+        .back {
+            margin-top: 10px;
+            background-color: #7569E2;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            width: 150px;
+        }
+        .info-data {
+            display: flex;
+            text-align: center;
+        }
+        .key, .value {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .key {
+            width: 150px;
+            background-color: #7569E2;
+            padding: 10px;
+            color: white;
+            border-radius: 10px 0 0 10px;
+        }
+        .value {
+            border: 1px solid #7569E2;
+            width: 150px;
+            border-radius: 0 10px 10px 0;
+        }
+        .information {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -60,7 +122,15 @@
         <div class="search-field">Student ID</div>
         <input class="input" type="text">
     </div>
+    <div class="overlay-card hide">
+        <div class="title">Student Details</div>
+        <div class="information"></div>
+        <div class="back">Back</div>
+    </div>
     <script>
+        const overlayCard = document.querySelector('.overlay-card');
+        const information= document.querySelector('.information');
+        const back = document.querySelector('.back');
         const fetchData = (student_id)=> {
             fetch(`http://localhost/Student-Management-System/Student/Student Read/Student_Read.php?student_id=${student_id}`)
                 .then(response => response.json())
@@ -79,6 +149,11 @@
                         field.textContent = fieldName;
                         header.appendChild(field);
                     });
+
+                    const extraInfoHeader = document.createElement('th');
+                    extraInfoHeader.textContent = 'Extra Info';
+                    header.appendChild(extraInfoHeader);
+
                     table.appendChild(header);
 
                     data.forEach(rowData => {
@@ -88,9 +163,44 @@
                             cell.textContent = cellData;
                             row.appendChild(cell);
                         });
+                        const extraInfoCell = document.createElement('td');
+                        extraInfoCell.textContent = 'Info';
+                        extraInfoCell.classList.add('extra');
+                        extraInfoCell.addEventListener('click', ()=> {
+                            fetchExtraData(rowData.student_id);
+                            overlayCard.classList.toggle('hide');
+                        })
+                        row.appendChild(extraInfoCell);
+
                         table.append(row);
                     });
                     document.body.appendChild(table);
+                })
+                .catch(error => console.log(error));
+        }
+        const fetchExtraData = (student_id)=> {
+            information.innerHTML = ''
+            fetch(`http://localhost/Student-Management-System/Student/Student Read/Student_Read_Extra.php?student_id=${student_id}`)
+                .then(response => response.json())
+                .then(data => {
+                    extraData = data[0];
+                    Object.keys(extraData).forEach(keyData => {
+                        const infoData = document.createElement('div');
+                        infoData.classList.add('info-data')
+
+                        const key = document.createElement('div');
+                        key.textContent = keyData;
+                        key.classList.add('key')
+                        
+                        const value = document.createElement('div');
+                        value.textContent = extraData[keyData];
+                        value.classList.add('value')
+
+                        infoData.appendChild(key);
+                        infoData.appendChild(value);
+
+                        information.appendChild(infoData);
+                    })
                 })
                 .catch(error => console.log(error));
         }
@@ -99,6 +209,9 @@
             const student_id = event.target.value;
             fetchData(student_id);
         });
+        back.addEventListener('click', ()=> {
+            overlayCard.classList.toggle('hide');
+        })
     </script>
 </body>
 </html>

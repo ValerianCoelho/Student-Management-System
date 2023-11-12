@@ -1303,3 +1303,18 @@ FROM student
 LEFT JOIN marks ON student.student_id = marks.student_id
 LEFT JOIN attendance ON student.student_id = attendance.student_id
 GROUP BY student.student_id, student.fname, student.lname;
+
+SELECT 
+    student.student_id,
+    student.fname AS student_fname,
+    student.lname AS student_lname,
+    AVG(marks.IT1) AS avg_IT1,
+    AVG(marks.IT2) AS avg_IT2,
+    AVG(marks.IT3) AS avg_IT3,
+    AVG(marks.SEM) AS avg_SEM,
+    AVG(attendance.present)*100 AS avg_attendance
+FROM student
+LEFT JOIN marks ON student.student_id = marks.student_id
+LEFT JOIN attendance ON student.student_id = attendance.student_id
+WHERE student.student_id = '21co68'
+GROUP BY student.student_id, student.fname, student.lname;
