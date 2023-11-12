@@ -4,18 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+        h2 {
+            font-size: 30px;
+            color: #7569e2;
+            margin-bottom: 15px;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .input-data {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            height: 35px;
+        }
+        label {
+            width: 200px;
+            border: 2px solid #7569e2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #7569e2;
+            border-radius: 5px;
+        }
+        input {
+            width: 200px;
+        }
+        input[type="submit"], input[type="reset"] {
+            color: white;
+            background-color: #7569e2;
+            width: 200px;
+            outline: none;
+            border: none;
+            height: 40px;
+            border-radius: 5px;
+            transition: all .1s;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #5e53c4;
+        }
+        input[type="text"] {
+            outline: #7569e2;
+            border: 2px solid #7569e2;
+            border-radius: 5px;
+            padding: 5px;
+            color: #7569e2;
+        }   
+    </style>
 </head>
 <body>
     <h2>Delete marks</h2>
     <form action="marksDelete.php" method="post">
-        <label>Enter student id</label><br>
-        <input type="text" name="student_id"><br><br>
+        <div class="input-data">
+            <label>Enter student id</label>
+            <input type="text" name="student_id">
+        </div>
+        <div class="input-data">
+            <label>Enter subject</label>
+            <input type="text" name="subject">
+        </div>
+        <div class="input-data">
+            <input type="submit">
+            <input type="reset">
+        </div>
 
-        <label>Enter subject</label><br>
-        <input type="text" name="subject"><br><br>
 
-        <input type="submit">
-        <input type="reset">
     </form>
 </body>
 </html>
