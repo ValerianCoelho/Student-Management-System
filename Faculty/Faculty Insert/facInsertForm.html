@@ -4,27 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+        h2 {
+            font-size: 30px;
+            color: #7569e2;
+            margin-bottom: 15px;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .input-data {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            height: 35px;
+        }
+        label {
+            width: 200px;
+            border: 2px solid #7569e2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #7569e2;
+            border-radius: 5px;
+        }
+        input {
+            width: 200px;
+        }
+        input[type="submit"], input[type="reset"] {
+            color: white;
+            background-color: #7569e2;
+            width: 200px;
+            outline: none;
+            border: none;
+            height: 40px;
+            border-radius: 5px;
+            transition: all .1s;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #5e53c4;
+        }
+        input[type="text"] {
+            outline: #7569e2;
+            border: 2px solid #7569e2;
+            border-radius: 5px;
+            padding: 5px;
+            color: #7569e2;
+        }
+    </style>
 </head>
 <body>
+    <h2>Insert student details</h2>
     <form action="facInsert.php" method="post">
-        <h2>Insert student details</h2>
-        <label>Enter faculty id</label><br>
-        <input type="text" name="faculty_id"><br><br>
-
-        <label>Enter first name</label><br>
-        <input type="text" name="fname"><br><br>
-
-        <label>Enter last name</label><br>
-        <input type="text" name="lname"><br><br>
-
-        <label>Enter email</label><br>
-        <input type="text" name="email"><br><br>
-
-        <label>Enter password</label><br>
-        <input type="text" name="password"><br><br>
-
-        <input type="submit">
-        <input type="reset">
+        <div class="input-data">
+            <label>Enter faculty id</label>
+            <input type="text" name="faculty_id">
+        </div>
+        <div class="input-data">
+            <label>Enter first name</label>
+            <input type="text" name="fname">
+        </div>
+        <div class="input-data">
+            <label>Enter last name</label>
+            <input type="text" name="lname">
+        </div>
+        <div class="input-data">
+            <label>Enter email</label>
+            <input type="text" name="email">
+        </div>
+        <div class="input-data">
+            <label>Enter password</label>
+            <input type="text" name="password">
+        </div>
+        <div class="input-data">
+            <input type="submit">
+            <input type="reset">
+        </div>
     </form>
 </body>
 </html>
