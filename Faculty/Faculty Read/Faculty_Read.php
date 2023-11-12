@@ -12,6 +12,7 @@
 
     $faculty_id = $_GET['faculty_id'];
     $query = "select * from faculty where faculty_id='$faculty_id';";
+    $query = "select * from faculty where faculty_id in (select faculty_id from faculty where faculty_id='$faculty_id');";
     $result = $conn->query($query);
 
     if($result->num_rows == 0) {

@@ -11,11 +11,11 @@
     }
 
     $student_id = $_GET['student_id'];
-    $query = "select * from marks where student_id='$student_id';";
+    $query = "select * from marks where student_id in (select student_id from marks where student_id='$student_id');";
     $result = $conn->query($query);
 
     if($result->num_rows == 0) {
-        $query = "select * from marks where student_id = '21co01';";
+        $query = "select * from marks where student_id in (select student_id from marks where student_id='21co01');";
         $result = $conn->query($query);
     }
 
