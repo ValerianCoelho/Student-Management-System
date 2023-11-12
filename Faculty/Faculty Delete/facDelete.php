@@ -15,4 +15,5 @@
         echo "<br>Details of ".$fac_id." were deleted";
     else
         echo "<br>Deletion failed";
+    $conn->close();
 ?>

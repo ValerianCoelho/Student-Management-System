@@ -10,8 +10,14 @@
         echo $conn->connect_error;
     }
 
-    $query = $_GET['query'];
+    $faculty_id = $_GET['faculty_id'];
+    $query = "select * from faculty where faculty_id='$faculty_id';";
     $result = $conn->query($query);
+
+    if($result->num_rows == 0) {
+        $query = "select * from faculty;";
+        $result = $conn->query($query);
+    }
 
     $data = [];
 

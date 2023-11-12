@@ -20,4 +20,5 @@
         echo "<br><br>Values updated successfully";
     else
         echo "<br><br>Updation of values failed";
+    $conn->close();
 ?>

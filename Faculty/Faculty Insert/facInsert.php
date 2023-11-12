@@ -20,4 +20,5 @@
         echo "<br><br>Values inserted successfully";
     else
         echo "<br><br>Insertion of values failed";
+    $conn->close();
 ?>
