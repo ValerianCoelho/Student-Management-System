@@ -1282,6 +1282,10 @@ select * from student_info where student_id in (select student_id from student_i
 CREATE VIEW student_info AS
 SELECT student_id, fname, lname
 FROM student;
+
+CREATE VIEW faculty_info AS
+SELECT faculty_id, fname, lname, subject
+FROM faculty;
 -----------------------------------------------------------------------------------------------------------------
 ┏━━━━━━━┓┏━━━━━━━━━━━━━━━━━━━━━┓
 ┃ JOINS ┃┃ AGGREGATE FUNCTIONS ┃

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table th, table td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>Faculty Read</div>
+    <script>
+        const query = "select * from student_info";
+        fetch(`http://localhost/Student-Management-System/fetch_data.php?query=${query}`)
+            .then(response => response.json())
+            .then(data => {
+                const fieldNames = Object.keys(data[0]);
+                const table = document.createElement('table');
+                const headerRow = table.insertRow();
+
+                for(let i=0; i<fieldNames.length; i++) {
+                    const field = document.createElement('th');
+                    field.textContent = fieldNames[i]
+                    headerRow.appendChild(field)
+                }
+
+                data.forEach(rowData => {
+                    const row = table.insertRow();
+                    Object.keys(rowData).forEach(cellData => {
+                        const cell = row.insertCell();
+                        cell.textContent = rowData[cellData];
+                    })
+                });
+                document.body.appendChild(table);
+            })
+            .catch(error => console.log(error))
+    </script>
+</body>
+</html>
