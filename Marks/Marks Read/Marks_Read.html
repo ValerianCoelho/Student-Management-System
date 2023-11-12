@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td {
+            font-size: 12px;
+        }
+        th, td {
+            padding: 10px 20px;
+        }
+        tr:nth-child(odd) {
+            background-color: #EAE8FF;
+        }
+        tr:first-child {
+            background-color: #7569E2;
+            color: white;
+        }
+        .search-field {
+            background-color: #7569E2;
+            color: white;
+            font-weight: bold;
+            padding: 8px 20px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            outline: #7569e2;
+            border: 2px solid #7569e2;
+            border-radius: 5px;
+            padding: 8px 5px;
+            color: #7569e2;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-data">
+        <div class="search-field">Student ID</div>
+        <input class="input" type="text">
+    </div>
+    <script>
+        const fetchData = (student_id)=> {
+            fetch(`http://localhost/Student-Management-System/Marks/Marks Read/Marks_Read.php?student_id=${student_id}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Remove existing tables
+                    const existingTables = document.querySelectorAll('table');
+                    existingTables.forEach(table => table.remove());
+
+                    // Create new table
+                    const fieldNames = Object.keys(data[0]);
+                    const table = document.createElement('table');
+                    const header = document.createElement('tr');
+
+                    fieldNames.forEach(fieldName => {
+                        const field = document.createElement('th');
+                        field.textContent = fieldName;
+                        header.appendChild(field);
+                    });
+                    table.appendChild(header);
+
+                    data.forEach(rowData => {
+                        const row = document.createElement('tr');
+                        Object.values(rowData).forEach(cellData => {
+                            const cell = document.createElement('td');
+                            cell.textContent = cellData;
+                            row.appendChild(cell);
+                        });
+                        table.append(row);
+                    });
+                    document.body.appendChild(table);
+                })
+                .catch(error => console.log(error));
+        }
+        fetchData();
+        document.querySelector('.input').addEventListener('input', (event) => {
+            const student_id = event.target.value;
+            fetchData(student_id);
+        });
+    </script>
+</body>
+</html>
