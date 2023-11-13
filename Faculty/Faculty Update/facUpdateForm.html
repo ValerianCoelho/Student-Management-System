@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty</title>
+    <title>Faculty Update</title>
     <style>
         * {
             margin: 0;
@@ -76,23 +76,23 @@
     <form action="facUpdate.php" method="post">
         <div class="input-data">
             <label>Enter faculty id</label>
-            <input type="text" name="faculty_id">
+            <input type="text" name="faculty_id" required>
         </div>
         <div class="input-data">
             <label>Enter first name</label>
-            <input type="text" name="fname">
+            <input type="text" name="fname" required>
         </div>
         <div class="input-data">
             <label>Enter last name</label>
-            <input type="text" name="lname">
+            <input type="text" name="lname" required>
         </div>
         <div class="input-data">
             <label>Enter email</label>
-            <input type="text" name="email">
+            <input type="text" name="email" required>
         </div>
         <div class="input-data">
             <label>Enter password</label>
-            <input type="text" name="password">
+            <input type="text" name="password" required>
         </div>
         <div class="input-data">
             <input type="submit">
