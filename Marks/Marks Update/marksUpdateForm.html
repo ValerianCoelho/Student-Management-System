@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marks</title>
+    <title>Marks Update</title>
     <style>
         * {
             margin: 0;
@@ -76,27 +76,27 @@
     <form action="marksUpdate.php" method="post">
         <div class="input-data">
             <label>Enter student id</label>
-            <input type="text" name="student_id">
+            <input type="text" name="student_id" required>
         </div>
         <div class="input-data">
             <label>Enter subject</label>
-            <input type="text" name="subject">
+            <input type="text" name="subject" required>
         </div>
         <div class="input-data">
             <label>Enter IT 1 marks</label>
-            <input type="number" name="IT1" max="25">
+            <input type="number" name="IT1" max="25" required>
         </div>
         <div class="input-data">
             <label>Enter IT 2 marks</label>
-            <input type="number" name="IT2" max="25">
+            <input type="number" name="IT2" max="25" required>
         </div>
         <div class="input-data">
             <label>Enter IT 3 marks</label>
-            <input type="number" name="IT3" max="25">
+            <input type="number" name="IT3" max="25" required>
         </div>
         <div class="input-data">
             <label>Enter SEM marks</label>
-            <input type="number" name="SEM" max="100">
+            <input type="number" name="SEM" max="100" required>
         </div>
         <div class="input-data">
             <input type="submit">

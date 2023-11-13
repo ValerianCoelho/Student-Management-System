@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance</title>
+    <title>Attendance Delete</title>
     <style>
         * {
             margin: 0;
@@ -76,11 +76,11 @@
     <form action="attDelete.php" method="post">
         <div class="input-data">
             <label>Enter student id</label>
-            <input type="text" name="student_id">
+            <input type="text" name="student_id" required>
         </div>
         <div class="input-data">
             <label>Enter date</label>
-            <input type="date" name="date">
+            <input type="date" name="date" required>
         </div>
         <div class="input-data">
             <input type="submit">
