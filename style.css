@@ -1,0 +1,121 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: block;
+    border: 2px solid #7569e2;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #7569e2;
+    width: 200px;
+    text-align: center;
+    transition: all .1s;
+}
+a:hover {
+    background-color: #7569e2;
+    color: white;
+}
+h2 {
+    font-size: 30px;
+    color: #7569e2;
+}
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99vw;
+    padding: 16px;
+    color: white;
+    background-color: #7569e2;
+    font-size: 20px;
+    text-align: center;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 97vw;
+    padding: 16px;
+    color: rgb(233, 233, 233);
+    background-color: #7569e2;
+    font-size: 14px;
+    padding-left: 40px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+td {
+    font-size: 12px;
+}
+th, td {
+    padding: 10px 20px;
+}
+tr:nth-child(odd) {
+    background-color: #EAE8FF;
+}
+tr:first-child {
+    background-color: #7569E2;
+    color: white;
+}
+.search-field {
+    background-color: #7569E2;
+    color: white;
+    font-weight: bold;
+    padding: 8px 20px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.input-data {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    height: 35px;
+}
+label {
+    width: 200px;
+    border: 2px solid #7569e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7569e2;
+    border-radius: 5px;
+}
+input {
+    width: 200px;
+}
+input[type="submit"], input[type="reset"] {
+    color: white;
+    background-color: #7569e2;
+    width: 200px;
+    outline: none;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    transition: all .1s;
+}
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #5e53c4;
+}
+input[type="text"], input[type="number"], input[type="date"] {
+    outline: #7569e2;
+    border: 2px solid #7569e2;
+    border-radius: 5px;
+    padding: 5px;
+    color: #7569e2;
+}
