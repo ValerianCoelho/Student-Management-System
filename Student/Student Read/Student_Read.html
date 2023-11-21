@@ -4,139 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student View</title>
+    <link rel="stylesheet" href="../../style.css">
     <style>
-        * {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-        }
         body {
             display: flex;
             align-items: center;
             flex-direction: column;
             height: 100vh;
             gap: 20px;
-        }
-        table {
-            border-collapse: collapse;
-            text-align: center;
-        }
-        td {
-            font-size: 12px;
-        }
-        th, td {
-            padding: 10px 20px;
-        }
-        tr:nth-child(odd) {
-            background-color: #EAE8FF;
-        }
-        tr:first-child {
-            background-color: #7569E2;
-            color: white;
-        }
-        .search-field {
-            background-color: #7569E2;
-            color: white;
-            font-weight: bold;
-            padding: 8px 20px;
-            display: inline-block;
-            border-radius: 5px;
-        }
-        input[type="text"] {
-            outline: #7569e2;
-            border: 2px solid #7569e2;
-            border-radius: 5px;
-            padding: 8px 5px;
-            color: #7569e2;
-            margin-left: 10px;
-        }
-        .input-data {
-            margin-top: 100px;
-        }
-        .extra {
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        .overlay-card {
-            position: fixed;
-            top: 50%;
-            left:50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            border-radius: 20px;
-        }
-        .title {
-            margin-bottom: 10px;
-            font-weight: bold;
-            color: #7569E2;
-            font-size: 20px;
-        }
-        .back {
-            margin-top: 10px;
-            background-color: #7569E2;
-            padding: 10px;
-            border-radius: 10px;
-            color: white;
-            width: 150px;
-        }
-        .info-data {
-            display: flex;
-            text-align: center;
-        }
-        .key, .value {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .key {
-            width: 150px;
-            background-color: #7569E2;
-            padding: 10px;
-            color: white;
-            border-radius: 10px 0 0 10px;
-        }
-        .value {
-            border: 1px solid #7569E2;
-            width: 150px;
-            border-radius: 0 10px 10px 0;
-        }
-        .information {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .hide {
-            display: none;
-        }
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 99vw;
-            padding: 16px;
-            color: white;
-            background-color: #7569e2;
-            font-size: 20px;
-            text-align: center;
-        }
-        footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 97vw;
-            padding: 16px;
-            color: rgb(233, 233, 233);
-            background-color: #7569e2;
-            font-size: 14px;
-            padding-left: 40px;
-            text-align: center;
         }
     </style>
 </head>
