@@ -1,17 +1,17 @@
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━━━━━━━━━━━━━━━━┓
-┃ CREATE STUDENT TABLE ┃
-┗━━━━━━━━━━━━━━━━━━━━━━┛
+cd /
+cd xampp/mysql/bin
+mysql -u root -p
+
+create database project;
+use project;
+
 create table student (
 student_id varchar(8) primary key,
 fname varchar(20),
 lname varchar(20),
 email varchar(50),
 password varchar(30));
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━━━━━━━━━━━━━━┓
-┃ CREATE MARKS TABLE ┃
-┗━━━━━━━━━━━━━━━━━━━━┛
+
 create table marks (
 student_id varchar(8),
 subject varchar(20),
@@ -22,10 +22,7 @@ SEM int(3),
 primary key(student_id, subject),
 foreign key(student_id) references student(student_id)
 );
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ CREATE ATTENDANCE TABLE ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
 create table attendance (
 student_id varchar(8),
 date date,
@@ -33,10 +30,7 @@ present int(1),
 primary key(student_id, date),
 foreign key(student_id) references student(student_id)
 );
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━━━━━━━━━━━━━━━━┓
-┃ CREATE FACULTY TABLE ┃
-┗━━━━━━━━━━━━━━━━━━━━━━┛
+
 create table faculty (
 faculty_id varchar(8) primary key,
 fname varchar(20),
@@ -44,10 +38,7 @@ lname varchar(20),
 email varchar(50),
 subject varchar(20),
 password varchar(30));
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ INSERT DATA INTO STUDENT TABLE ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
 INSERT INTO student (student_id, fname, lname, email, password) VALUES
 ('21co01', 'John', 'Doe', '21co01@aitdgoa.edu.in', 'aitdgoa123'),
 ('21co02', 'Alice', 'Smith', '21co02@aitdgoa.edu.in', 'aitdgoa123'),
@@ -129,10 +120,7 @@ INSERT INTO student (student_id, fname, lname, email, password) VALUES
 ('21co78', 'Nova', 'Potter', '21co78@aitdgoa.edu.in', 'aitdgoa123'),
 ('21co79', 'Dylan', 'Warren', '21co79@aitdgoa.edu.in', 'aitdgoa123'),
 ('21co80', 'Eva', 'Brown', '21co80@aitdgoa.edu.in', 'aitdgoa123');
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ INSERT DATA INTO MARKS TABLE ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
 INSERT INTO marks (student_id, subject, IT1, IT2, IT3, SEM) VALUES
 ('21co01', 'DMQP', 12, 16, 15, 77),    
 ('21co01', 'OS', 5, 8, 22, 74),        
@@ -614,10 +602,7 @@ INSERT INTO marks (student_id, subject, IT1, IT2, IT3, SEM) VALUES
 ('21co80', 'JAVA', 14, 22, 0, 9),
 ('21co80', 'CL & IPR', 16, 6, 4, 49),
 ('21co80', 'OE', 21, 18, 10, 13);
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ INSERT DATA INTO ATTENDANCE TABLE ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
 INSERT INTO attendance (student_id, date, present) VALUES
 ('21co01', '2023-11-08', 1),
 ('21co02', '2023-11-08', 1),
@@ -1259,10 +1244,7 @@ INSERT INTO attendance (student_id, date, present) VALUES
 ('21co78', '2023-11-15', 1),
 ('21co79', '2023-11-15', 1),
 ('21co80', '2023-11-15', 0);
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ INSERT DATA INTO FACULTY TABLE ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
 INSERT INTO faculty VALUES
 ('fc01', 'John', 'Smith', 'fc01@aitdgoa.edu.in', 'DMQP', 'aitdfaculty123'),
 ('fc02', 'Alice', 'Johnson', 'fc02@aitdgoa.edu.in', 'OS', 'aitdfaculty123'),
@@ -1270,15 +1252,7 @@ INSERT INTO faculty VALUES
 ('fc04', 'Emma', 'Jones', 'fc04@aitdgoa.edu.in', 'JAVA', 'aitdfaculty123'),
 ('fc05', 'Charlie', 'Miller', 'fc05@aitdgoa.edu.in', 'CL & IPR', 'aitdfaculty123'),
 ('fc06', 'Olivia', 'Davis', 'fc06@aitdgoa.edu.in', 'OE', 'aitdfaculty123');
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━━━━━━┓
-┃ SUBQUERIES ┃
-┗━━━━━━━━━━━━┛
-select * from student_info where student_id in (select student_id from student_info where fname like 'a%');
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━┓
-┃ VIEWS ┃
-┗━━━━━━━┛
+
 CREATE VIEW student_info AS
 SELECT student_id, fname, lname
 FROM student;
@@ -1286,35 +1260,3 @@ FROM student;
 CREATE VIEW faculty_info AS
 SELECT faculty_id, fname, lname, subject
 FROM faculty;
------------------------------------------------------------------------------------------------------------------
-┏━━━━━━━┓┏━━━━━━━━━━━━━━━━━━━━━┓
-┃ JOINS ┃┃ AGGREGATE FUNCTIONS ┃
-┗━━━━━━━┛┗━━━━━━━━━━━━━━━━━━━━━┛
-SELECT 
-    student.student_id,
-    student.fname AS student_fname,
-    student.lname AS student_lname,
-    AVG(marks.IT1) AS avg_IT1,
-    AVG(marks.IT2) AS avg_IT2,
-    AVG(marks.IT3) AS avg_IT3,
-    AVG(marks.SEM) AS avg_SEM,
-    AVG(attendance.present)*100 AS avg_attendance
-FROM student
-LEFT JOIN marks ON student.student_id = marks.student_id
-LEFT JOIN attendance ON student.student_id = attendance.student_id
-GROUP BY student.student_id, student.fname, student.lname;
-
-SELECT 
-    student.student_id,
-    student.fname AS student_fname,
-    student.lname AS student_lname,
-    AVG(marks.IT1) AS avg_IT1,
-    AVG(marks.IT2) AS avg_IT2,
-    AVG(marks.IT3) AS avg_IT3,
-    AVG(marks.SEM) AS avg_SEM,
-    AVG(attendance.present)*100 AS avg_attendance
-FROM student
-LEFT JOIN marks ON student.student_id = marks.student_id
-LEFT JOIN attendance ON student.student_id = attendance.student_id
-WHERE student.student_id = '21co68'
-GROUP BY student.student_id, student.fname, student.lname;
