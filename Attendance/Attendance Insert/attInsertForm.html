@@ -69,9 +69,35 @@
             padding: 5px;
             color: #7569e2;
         } 
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 99vw;
+            padding: 16px;
+            color: white;
+            background-color: #7569e2;
+            font-size: 20px;
+            text-align: center;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 97vw;
+            padding: 16px;
+            color: rgb(233, 233, 233);
+            background-color: #7569e2;
+            font-size: 14px;
+            padding-left: 40px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+    <header>
+        Student Management System
+    </header>
     <h2>Attendance Insertion</h2>
     <form action="attInsert.php" method="post">
         <div class="input-data">
@@ -91,5 +117,13 @@
             <input type="reset">
         </div>
     </form>
+    <footer>
+        <div id="Copyright">
+            Copyright © 2023 Student Management System
+        </div>
+        <div>
+            Designed and Built by Valerian and Warren
+        </div>
+    </footer>
 </body>
 </html>

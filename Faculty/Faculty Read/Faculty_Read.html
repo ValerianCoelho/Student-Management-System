@@ -51,9 +51,35 @@
             color: #7569e2;
             margin-left: 10px;
         }
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 99vw;
+            padding: 16px;
+            color: white;
+            background-color: #7569e2;
+            font-size: 20px;
+            text-align: center;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 97vw;
+            padding: 16px;
+            color: rgb(233, 233, 233);
+            background-color: #7569e2;
+            font-size: 14px;
+            padding-left: 40px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+    <header>
+        Student Management System
+    </header>
     <div class="input-data">
         <div class="search-field">Roll Number</div>
         <input class="input" type="text">
@@ -98,5 +124,13 @@
             fetchData(faculty_id);
         });
     </script>
+    <footer>
+        <div id="Copyright">
+            Copyright © 2023 Student Management System
+        </div>
+        <div>
+            Designed and Built by Valerian and Warren
+        </div>
+    </footer>
 </body>
 </html>
